@@ -1,0 +1,565 @@
+body {
+    position: relative;
+    min-height: 100vh; /* Ensure the body height covers the full viewport height */
+    margin: 0; /* Remove default margin */
+    background-image: url("img/Stages/netherealm.png");
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Centers the image both horizontally and vertically */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    color: white;
+    /* text-align: right; */
+}
+
+@font-face {
+    font-family: "Bronzier";
+    src: url("./Bronzier-Medium.ttf");
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0); /* Black color with 30% opacity */
+    z-index: 1; /* Ensure the overlay is on top */
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    z-index: 2; /* Ensure the container content is above the overlay */
+}
+.link .custom-navbar {
+    background-color: rgb(
+        255,
+        255,
+        255
+    ); /* White with 10% opacity for better visibility */
+    backdrop-filter: blur(
+        10px
+    ); /* Optional: Adds a blur effect for better readability */
+}
+#latestVersion {
+    font-family: "Bronzier", "Arial", sans-serif;
+    font-weight: bolder;
+    padding-left: 100px;
+    font-size: small;
+    font-weight: bolder;
+    padding-left: 50px;
+    body {
+        position: relative;
+        min-height: 100vh; /* Ensure the body height covers the full viewport height */
+        margin: 0; /* Remove default margin */
+        background-image: url("img/Stages/netherealm.png");
+        background-size: cover; /* Ensure the image covers the entire background */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-position: center center; /* Centers the image both horizontally and vertically */
+        background-attachment: fixed; /* Keeps the background fixed while scrolling */
+        /* text-align: right; */
+    }
+
+    @font-face {
+        font-family: "Bronzier";
+        src: url("./Bronzier-Medium.ttf");
+    }
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+            255,
+            255,
+            255,
+            0.301
+        ); /* Black color with 30% opacity */
+        z-index: 1; /* Ensure the overlay is on top */
+        pointer-events: none; /* Allow clicks to pass through the overlay */
+    }
+
+    .container {
+        position: relative;
+        z-index: 2; /* Ensure the container content is above the overlay */
+    }
+
+    .custom-navbar {
+        background-color: rgb(
+            255,
+            255,
+            255
+        ); /* White with 10% opacity for better visibility */
+        backdrop-filter: blur(
+            10px
+        ); /* Optional: Adds a blur effect for better readability */
+    }
+
+    .centered-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(
+            100vh - 56px
+        ); /* Full height minus the height of the navbar */
+        position: relative;
+        z-index: 2; /* Ensure the image is above the overlay */
+        flex-direction: column;
+    }
+
+    .centered-image-container div {
+        text-shadow: 1px 1px black;
+        font-family: "Bronzier", "Arial", sans-serif;
+        color: white;
+        text-align: justify;
+        max-width: 600px;
+        padding: 10px;
+        font-weight: bolder;
+        font-size: large;
+    }
+
+    .centered-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .button-container {
+        margin-top: 10px;
+    }
+    .button-container.btn {
+        margin: 5px;
+    }
+    #linkButton {
+        margin-top: 80px;
+    }
+    #disclaimer {
+        font-family: "Bronzier", "Arial", sans-serif;
+        font-weight: bold;
+    }
+    #mod {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0px;
+        font-size: 15px;
+    }
+    #warner {
+        font-size: 15px;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-family: "Bronzier", "Arial", sans-serif;
+    }
+    h2 {
+        display: flex;
+        justify-content: center;
+        font-family: "Bronzier", "Arial", sans-serif;
+    }
+    #fighters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 100px;
+        padding-right: 100px;
+        margin-right: 30px;
+        margin-left: 30px;
+        border: 1px solid red;
+    }
+    .img-fluid {
+        width: 100px;
+    }
+}
+.nav-link {
+    color: white;
+}
+
+.centered-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 56px); /* Full height minus the height of the navbar */
+    position: relative;
+    z-index: 2; /* Ensure the image is above the overlay */
+    flex-direction: column;
+}
+
+.centered-image-container div {
+    text-shadow: 1px 1px black;
+    font-family: "Bronzier", "Arial", sans-serif;
+    color: white;
+    text-align: justify;
+    max-width: 600px;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.centered-image {
+    max-width: 100%;
+    height: auto;
+}
+
+#linkButton {
+    display: flex;
+    gap: 8px;
+    margin-top: 80px;
+}
+#disclaimer {
+    font-family: "Bronzier", "Arial", sans-serif;
+    font-weight: bold;
+}
+#mod {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+#warner {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+}
+/* end of index.html */
+
+/* Fighter section */
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: "Bronzier", "Arial", sans-serif;
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+#base {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 800px;
+    margin: 0px auto;
+    padding: 0px;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    margin: 0px auto;
+}
+
+.kombatantList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0px;
+}
+.img-fluid {
+    width: 100px;
+}
+
+#unchainedName {
+    font-family: "Bronzier", "Arial", sans-serif;
+    margin-top: 30px;
+}
+#gamecube {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+    /* border: 1px solid rgb(255, 157, 0); */
+}
+#unchained {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-grow: 0;
+    padding: 0px;
+    margin: 0px;
+    /* border: 1px solid rgb(13, 0, 255); */
+}
+.customWidth {
+    width: 90px;
+}
+
+#ultimateName {
+    font-family: "Bronzier", "Arial", sans-serif;
+    margin-top: 30px;
+}
+#ultimate {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-grow: 0;
+    padding: 0px;
+    margin: 0px;
+    /* border: 1px solid rgb(21, 255, 0); */
+}
+#bossName {
+    font-family: "Bronzier", "Arial", sans-serif;
+    margin-top: 30px;
+}
+#onaga {
+    display: flex;
+    justify-content: center;
+    /* flex-grow: 0; */
+
+    /* border: 1px solid rgb(242, 255, 0); */
+}
+/* end of fighter section */
+
+/* about section */
+#aboutMe {
+    padding: 0px;
+    margin-top: 100px;
+    text-align: center;
+    font-family: "Bronzier", "Arial", sans-serif;
+    font-size: 30px;
+}
+
+#socials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+#gitHub {
+    width: 40px;
+}
+#youTube {
+    width: 50px;
+    margin-right: 10px;
+    /* Adjust the margin as needed */
+}
+#gh {
+    display: flex;
+    align-items: flex-start;
+    justify-content: end;
+}
+/* end of about section */
+
+/* scorpion.html */
+.scorpion {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    width: 350px;
+    height: auto;
+}
+#charSelect {
+    display: flex;
+    justify-content: flex-start;
+}
+#selectable {
+    font-family: "Bronzier", "Arial", sans-serif;
+}
+#ps2 {
+    font-size: 30px;
+    font-family: "Bronzier", "Arial", sans-serif;
+}
+#GameCube {
+    font-size: 30px;
+    font-family: "Bronzier", "Arial", sans-serif;
+}
+#psp {
+    font-size: 30px;
+    font-family: "Bronzier", "Arial", sans-serif;
+}
+#ult {
+    font-size: 30px;
+    font-family: "Bronzier", "Arial", sans-serif;
+}
+#charaImg {
+    display: flex;
+    align-items: flex-start;
+    justify-content: end;
+}
+
+#scorpBio {
+    max-width: 100%;
+    height: auto;
+}
+
+#ending {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#bio,
+#ending {
+    font-size: 30px;
+    font-family: "Bronzier", "Arial", sans-serif;
+    margin-bottom: 200px;
+}
+
+#stance {
+    margin-bottom: 60px;
+}
+
+#stance h2 {
+    font-family: "Bronzier", "Arial", sans-serif;
+}
+
+h3 {
+    font-size: 25px;
+    font-family: "Bronzier", "Arial", sans-serif;
+}
+
+#note {
+    padding-bottom: 20px;
+}
+
+#stance1 {
+    margin-bottom: 60px;
+}
+
+#controlSetup {
+    max-width: 100%;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+}
+#comments {
+    font-family: "Bronzier", "Arial", sans-serif;
+}
+
+.comment-block {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f900;
+    border-radius: 5px;
+}
+/* #userComment {
+    border: 1px solid white;
+} */
+
+/* tier list section */
+
+.tier-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.tier {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    border: 2px solid #ccc;
+    background-color: transparent;
+}
+
+.tier h2 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.drop-target {
+    min-height: 60px; /* Adjust the size as needed */
+    border: 2px dashed #ccc; /* Dashed border */
+    background-color: transparent; /* Transparent background */
+    border-radius: 10px; /* Rounded corners to match the tier background */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop-target.is-over {
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.1
+    ); /* Slightly highlighted background when dragging over */
+}
+
+.character {
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    cursor: move;
+}
+
+/* Character Pool */
+/* .character-pool {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    border: 2px dashed #ccc;
+    background-color: transparent;
+} */
+
+#characterPool {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid #ccc;
+}
+
+.character-pool .drop-target {
+    border: 2px solid #333;
+    opacity: 0;
+}
+
+h2 {
+    color: white;
+    font-family: "Bronzier", "Arial", sans-serif;
+    text-shadow: 1px 1px black;
+}
+
+@media only screen and (max-width: 600px) {
+    #scorpBio,
+    #controlSetup {
+        img {
+            width: 90%;
+        }
+    }
+
+    iframe {
+        width: 90%;
+    }
+}
+
+.signin-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+#buttonKey {
+    font-family: "Bronzier", "Arial", sans-serif;
+}
+
+#comments .comment {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.user-meta {
+    display: flex;
+    align-items: center; /* Aligns image and text vertically */
+}
+
+.user-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px; /* Adjusts the space between the image and name */
+}
+
+.user-name {
+    margin-left: 0; /* Ensure there’s no extra space between the image and text */
+}
