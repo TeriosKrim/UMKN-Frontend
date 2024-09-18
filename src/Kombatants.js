@@ -8,7 +8,7 @@ const Kombatants = () => {
 
     useEffect(() => {
         const makeAPICall = async () => {
-            const res = await fetch(`http://localhost:3001/kombatants`);
+            const res = await fetch(`https://ultimatemkd.org/kombatants`);
             const data = await res.json();
             setCombantants(data.kombatants);
         };

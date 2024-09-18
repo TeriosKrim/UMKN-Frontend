@@ -396,6 +396,7 @@ h1 {
 }
 
 #stance h2 {
+    font-size: 40px;
     font-family: "Bronzier", "Arial", sans-serif;
 }
 
@@ -409,6 +410,7 @@ h3 {
 }
 
 #stance1 {
+    text-align: center;
     margin-bottom: 60px;
 }
 
@@ -562,4 +564,35 @@ h2 {
 
 .user-name {
     margin-left: 0; /* Ensure there’s no extra space between the image and text */
+}
+
+#combos {
+    font-size: large;
+    font-family: "Bronzier", "Arial", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.move-table {
+    font-size: 25px;
+    margin: 0 auto; /* This centers the table */
+    width: 80%; /* Adjust the table width to make it smaller and closer */
+    font-family: "Bronzier", "Arial", sans-serif;
+    border-collapse: collapse;
+}
+
+.move-table td {
+    padding: 5px 20px; /* Reducing space between the columns */
+    font-family: "Bronzier", "Arial", sans-serif;
+    text-align: center; /* Centers text within each column */
+}
+
+.move-table td a {
+    color: #007bff;
+    font-family: "Bronzier", "Arial", sans-serif;
+    text-decoration: none;
+}
+
+.move-table td a:hover {
+    text-decoration: underline;
 }
