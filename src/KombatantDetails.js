@@ -22,12 +22,12 @@ const KombatantDetails = () => {
         setAvailbility(matchingData);
 
         const makeAPICall = async () => {
-            const res2 = await fetch(`https://ultimatemkd.org/kombatant/${id}`);
+            const res2 = await fetch(`http://localhost:3001/kombatant/${id}`);
             const data2 = await res2.json();
             console.log(data2);
             setKombatant(data2.kombatant);
 
-            const res = await fetch(`https://ultimatemkd.org/comment/${id}`);
+            const res = await fetch(`http://localhost:3001/comment/${id}`);
             const data = await res.json();
             setComments(data.comments);
         };
@@ -44,7 +44,7 @@ const KombatantDetails = () => {
 
         console.log("Submitting comment:", userComment);
 
-        const response = await fetch(`https://ultimatemkd.org/comment`, {
+        const response = await fetch(`http://localhost:3001/comment`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
