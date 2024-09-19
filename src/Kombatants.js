@@ -8,7 +8,9 @@ const Kombatants = () => {
 
     useEffect(() => {
         const makeAPICall = async () => {
-            const res = await fetch(`http://localhost:3001/kombatants`);
+            const res = await fetch(
+                `postgresql://umkn-backend-db.flycast/kombatants`
+            );
             const data = await res.json();
             setCombantants(data.kombatants);
         };
