@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "../App.css";
 // React DnD provider for drag-and-drop context
 import { DndProvider } from "react-dnd";
+import { TouchBackend } from "react-dnd-touch-backend";
 // Backend for HTML5 drag-and-drop support
 import { HTML5Backend } from "react-dnd-html5-backend";
 // Importing the DropTarget component
@@ -335,11 +336,21 @@ const Tier = () => {
         setCharacterPool(initialCharacterPool);
     };
 
+    function isTouchDevice() {
+        return (
+            "ontouchstart" in window ||
+            navigator.maxTouchPoints > 0 ||
+            navigator.msMaxTouchPoints > 0
+        );
+    }
+
     return (
         <>
             <div className="container">
                 <h1>Tier List</h1>
-                <DndProvider backend={HTML5Backend}>
+                <DndProvider
+                    backend={isTouchDevice() ? TouchBackend : HTML5Backend}
+                >
                     <div className="tier-container">
                         {Object.keys(tiers).map((tier) => (
                             <div

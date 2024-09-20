@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -22,16 +23,16 @@ const Home = () => {
                             Download the mod
                         </button>
                     </a>
-                    <a href="/kombatants">
+                    <Link to="/kombatants">
                         <button className="btn btn-outline-danger">
                             See the Kombatants
                         </button>
-                    </a>
-                    <a href="/tier-list">
+                    </Link>
+                    <Link to="/tier-list">
                         <button className="btn btn-outline-warning">
                             View the tier list
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div id="disclaimer">

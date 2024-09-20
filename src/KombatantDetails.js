@@ -22,12 +22,16 @@ const KombatantDetails = () => {
         setAvailbility(matchingData);
 
         const makeAPICall = async () => {
-            const res2 = await fetch(`http://localhost:3001/kombatant/${id}`);
+            const res2 = await fetch(
+                `https://umkn-backend-purple-voice-966.fly.dev/kombatant/${id}`
+            );
             const data2 = await res2.json();
             console.log(data2);
             setKombatant(data2.kombatant);
 
-            const res = await fetch(`http://localhost:3001/comment/${id}`);
+            const res = await fetch(
+                `https://umkn-backend-purple-voice-966.fly.dev/comment/${id}`
+            );
             const data = await res.json();
             setComments(data.comments);
         };
@@ -44,17 +48,20 @@ const KombatantDetails = () => {
 
         console.log("Submitting comment:", userComment);
 
-        const response = await fetch(`http://localhost:3001/comment`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify({
-                userComment: userComment,
-                fighterID: kombatant.id,
-            }),
-        });
+        const response = await fetch(
+            `https://umkn-backend-purple-voice-966.fly.dev/comment`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify({
+                    userComment: userComment,
+                    fighterID: kombatant.id,
+                }),
+            }
+        );
         const data = await response.json();
         console.log(data);
     };
@@ -247,7 +254,39 @@ const KombatantDetails = () => {
                                     return (
                                         <>
                                             <h2>{stance.name}</h2>
-                                            <table className="move-table">
+                                            <table
+                                                className="move-table"
+                                                style={
+                                                    {
+                                                        // border: "1px solid white",
+                                                    }
+                                                }
+                                            >
+                                                <thead>
+                                                    <tr>
+                                                        <th
+                                                            style={{
+                                                                width: "33%",
+                                                            }}
+                                                        >
+                                                            Name
+                                                        </th>
+                                                        <th
+                                                            style={{
+                                                                width: "33%",
+                                                            }}
+                                                        >
+                                                            Buttons
+                                                        </th>
+                                                        <th
+                                                            style={{
+                                                                width: "33%",
+                                                            }}
+                                                        >
+                                                            Video
+                                                        </th>
+                                                    </tr>
+                                                </thead>
                                                 <tbody>
                                                     {stance.moves.map(
                                                         (move) => {
@@ -263,18 +302,22 @@ const KombatantDetails = () => {
                                                                         }
                                                                     </td>
                                                                     <td>
-                                                                        {
-                                                                            move.button
-                                                                        }
+                                                                        {move.button ===
+                                                                        "N/A"
+                                                                            ? null
+                                                                            : move.button}
                                                                     </td>
                                                                     <td>
-                                                                        <a
-                                                                            href={
-                                                                                move.link
-                                                                            }
-                                                                        >
-                                                                            Link
-                                                                        </a>
+                                                                        {move.link ===
+                                                                        "N/A" ? null : (
+                                                                            <a
+                                                                                href={
+                                                                                    move.link
+                                                                                }
+                                                                            >
+                                                                                Link
+                                                                            </a>
+                                                                        )}
                                                                     </td>
                                                                 </tr>
                                                             );
@@ -296,15 +339,49 @@ const KombatantDetails = () => {
                             {kombatant.specials &&
                             kombatant.specials.length > 0 ? (
                                 <table className="move-table">
+                                    <thead>
+                                        <tr>
+                                            <th
+                                                style={{
+                                                    width: "33%",
+                                                }}
+                                            >
+                                                Name
+                                            </th>
+                                            <th
+                                                style={{
+                                                    width: "33%",
+                                                }}
+                                            >
+                                                Buttons
+                                            </th>
+                                            <th
+                                                style={{
+                                                    width: "33%",
+                                                }}
+                                            >
+                                                Video
+                                            </th>
+                                        </tr>
+                                    </thead>
                                     <tbody>
                                         {kombatant.specials.map((special) => (
                                             <tr key={special.id}>
                                                 <td>{special.move}</td>
-                                                <td>{special.button}</td>
+                                                {/* Conditionally render button: show null if it's "N/A", otherwise show the button */}
                                                 <td>
-                                                    <a href={special.link}>
-                                                        Link
-                                                    </a>
+                                                    {special.button === "N/A"
+                                                        ? null
+                                                        : special.button}
+                                                </td>
+                                                {/* Conditionally render link: show null if it's "N/A", otherwise show the link */}
+                                                <td>
+                                                    {special.link ===
+                                                    "N/A" ? null : (
+                                                        <a href={special.link}>
+                                                            Link
+                                                        </a>
+                                                    )}
                                                 </td>
                                             </tr>
                                         ))}

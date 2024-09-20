@@ -9,7 +9,7 @@ const Kombatants = () => {
     useEffect(() => {
         const makeAPICall = async () => {
             const res = await fetch(
-                `postgresql://umkn-backend-db.flycast/kombatants`
+                `https://umkn-backend-purple-voice-966.fly.dev/kombatants`
             );
             const data = await res.json();
             setCombantants(data.kombatants);
