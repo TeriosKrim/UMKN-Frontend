@@ -342,7 +342,7 @@ h1 {
     display: flex;
     justify-content: end;
     align-items: flex-end;
-    width: 350px;
+    /* width: 350px; */
     height: auto;
 }
 #charSelect {

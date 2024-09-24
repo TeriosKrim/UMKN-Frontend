@@ -140,7 +140,7 @@ const KombatantDetails = () => {
                             onClick={() => {
                                 setIsPrimary(!isPrimary);
                             }}
-                            style={{ cursor: "pointer" }}
+                            style={{ cursor: "pointer", maxHeight: 600 }}
                         />
                     </div>
                 </div>

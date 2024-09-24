@@ -53,7 +53,7 @@ const Navbar = () => {
                         </ul>
                         <div className="d-flex bold">
                             <SignedOut>
-                                <a href="/sign-in">login</a>
+                                <Link to="/sign-in">login</Link>
                             </SignedOut>
                             <SignedIn>
                                 <UserButton />
