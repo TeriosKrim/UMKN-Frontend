@@ -10,19 +10,24 @@ const About = () => {
                         love mortal kombat deception so much to a point where I
                         would play the game for hours so once I’ve learned how
                         to make websites I wanted to make one for the 3d mortal
-                        kombat games the first being deception since it’s my
-                        favorite game and also the tier list are different for
-                        which version of the game you are playing so I decided
-                        to add the tier list section so people can rate the
-                        characters and see how they stack up to each other based
-                        on the 3d mk community you are not in the discord you
-                        should join it if you love the 3d MK games as much as me
-                        in the
+                        kombat games the first being Ultimate Deception since I
+                        haven't seen any fansite that put UMKD character into
+                        them and Deception being my favorite game and also the
+                        tier list are different for which version of the game
+                        you are playing so I decided to add the tier list
+                        section so people can rate the characters and see how
+                        they stack up to each other based on the 3d mk community
+                        or just want to show their friend which characters are
+                        their favorite. If you are not in the 3d nexus discord
+                        you should join it if you love the 3d MK games as much
+                        as me
                         <br />
                         <a href="https://discord.com/invite/4TafRnXrcK">
-                            3D Mortal Kombat discord
+                            3D Nexus discord.
                         </a>
                         <br />
+                        If you have any questions or inquiries you can send me
+                        an email to yayajones865@gmail.com
                     </p>
                 </div>
             </div>

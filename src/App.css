@@ -1,7 +1,11 @@
+html,
 body {
-    position: relative;
-    min-height: 100vh; /* Ensure the body height covers the full viewport height */
-    margin: 0; /* Remove default margin */
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body {
     background-image: url("img/Stages/netherealm.png");
     background-size: cover; /* Ensure the image covers the entire background */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -342,7 +346,7 @@ h1 {
     display: flex;
     justify-content: end;
     align-items: flex-end;
-    /* width: 350px; */
+    width: 350px;
     height: auto;
 }
 #charSelect {
@@ -374,9 +378,21 @@ h1 {
     justify-content: end;
 }
 
-#scorpBio {
+#scorpBio,
+#controlSetup {
     max-width: 100%;
+    padding: 0px;
+    margin: 0px auto;
+}
+/* Make Images Responsive */
+#scorpBio img {
+    width: 50%;
     height: auto;
+}
+
+#controlSetup img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
 }
 
 #ending {
@@ -414,12 +430,6 @@ h3 {
     margin-bottom: 60px;
 }
 
-#controlSetup {
-    max-width: 100%;
-    height: auto;
-    padding: 0px;
-    margin: 0px;
-}
 #comments {
     font-family: "Bronzier", "Arial", sans-serif;
 }
@@ -595,4 +605,82 @@ h2 {
 
 .move-table td a:hover {
     text-decoration: underline;
+}
+
+/* This targets devices with a screen width of 600px or smaller (commonly mobile devices) */
+@media only screen and (max-width: 600px) {
+    body {
+        background-size: cover; /* Ensure the background fits smaller screens */
+    }
+
+    h1 {
+        font-size: 24px; /* Smaller font size for headings */
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+    #scorpBio,
+    #controlSetup {
+        max-width: 100%; /* Ensure the sections take full width */
+        padding: 0px;
+        margin: 0px auto;
+    }
+
+    #scorpBio img,
+    #controlSetup img {
+        width: 100%; /* Make images responsive on mobile */
+        height: auto;
+    }
+
+    #base {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 400px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .img-fluid {
+        width: 80px; /* Reduce image size for smaller screens */
+    }
+
+    .move-table {
+        width: 100%; /* Make the table take the full width of smaller screens */
+    }
+
+    .move-table td {
+        padding: 10px; /* Adjust padding for smaller screen space */
+    }
+
+    #characterPool {
+        flex-direction: column; /* Stack the character pool vertically on small screens */
+        align-items: center; /* Center the items */
+    }
+
+    .tier-container {
+        width: 100%; /* Allow the tier container to take full width on mobile */
+    }
+
+    .tier {
+        flex-direction: column; /* Stack tier elements vertically */
+        align-items: flex-start;
+    }
+
+    .centered-image-container {
+        flex-direction: column; /* Center the content in a column layout */
+    }
+
+    #linkButton {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Increase the gap between buttons */
+    }
+
+    #scorpBio,
+    #controlSetup {
+        img {
+            width: 100%; /* Adjust image width to be responsive on smaller screens */
+        }
+    }
 }
