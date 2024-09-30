@@ -20,14 +20,14 @@ const About = () => {
                         or just want to show their friend which characters are
                         their favorite. If you are not in the 3d nexus discord
                         you should join it if you love the 3d MK games as much
-                        as me
+                        as me.
+                        <br />
+                        If you have any questions or inquiries you can send me
+                        an email to yayajones865@gmail.com
                         <br />
                         <a href="https://discord.com/invite/4TafRnXrcK">
                             3D Nexus discord.
                         </a>
-                        <br />
-                        If you have any questions or inquiries you can send me
-                        an email to yayajones865@gmail.com
                     </p>
                 </div>
             </div>

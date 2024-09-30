@@ -5,6 +5,7 @@ import Home from "./Home";
 import Kombatants from "./Kombatants";
 import About from "./About";
 import Tier from "./Tier/Tier";
+import PrivacyPolicy from "./privacy";
 import "./App.css"; // Import the consolidated CSS file
 
 import {
@@ -69,6 +70,15 @@ const myRoutes = createBrowserRouter([
             <>
                 <Navbar />
                 <Tier />
+            </>
+        ),
+    },
+    {
+        path: "/privacy-policy",
+        element: (
+            <>
+                <Navbar />
+                <PrivacyPolicy />
             </>
         ),
     },
