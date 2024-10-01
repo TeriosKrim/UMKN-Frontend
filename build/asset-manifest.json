@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.db0a84fb.css",
-    "main.js": "/static/js/main.dfd68678.js",
+    "main.js": "/static/js/main.e8ad3a06.js",
     "static/js/453.88e23e56.chunk.js": "/static/js/453.88e23e56.chunk.js",
     "static/media/netherealm.png": "/static/media/netherealm.a91afe5b4c73c4617ab2.png",
     "static/media/Bronzier-Medium.ttf": "/static/media/Bronzier-Medium.f414ca9726f5387ccc62.ttf",
     "static/media/umkd-logo.png": "/static/media/umkd-logo.da7f7696b3775b95bf83.png",
     "index.html": "/index.html",
     "main.db0a84fb.css.map": "/static/css/main.db0a84fb.css.map",
-    "main.dfd68678.js.map": "/static/js/main.dfd68678.js.map",
+    "main.e8ad3a06.js.map": "/static/js/main.e8ad3a06.js.map",
     "453.88e23e56.chunk.js.map": "/static/js/453.88e23e56.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.db0a84fb.css",
-    "static/js/main.dfd68678.js"
+    "static/js/main.e8ad3a06.js"
   ]
 }

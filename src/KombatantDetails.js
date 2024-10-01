@@ -12,6 +12,7 @@ const KombatantDetails = () => {
     const { getToken } = useAuth();
     const [kombatant, setKombatant] = useState();
     const [isPrimary, setIsPrimary] = useState(true);
+    const [userComment, setUserComment] = useState("");
 
     useEffect(() => {
         /*This look at data.js and it looks for the name of that character
@@ -39,12 +40,10 @@ const KombatantDetails = () => {
     }, [id]);
 
     const commentPost = async (event) => {
-        // event.preventDefault();
+        event.preventDefault();
 
         const token = await getToken();
         console.log(token);
-
-        const userComment = event.target.elements.userComment.value;
 
         console.log("Submitting comment:", userComment);
 
@@ -57,12 +56,14 @@ const KombatantDetails = () => {
                     Authorization: `Bearer ${token}`,
                 },
                 body: JSON.stringify({
-                    userComment: userComment,
+                    userComment,
                     fighterID: kombatant.id,
                 }),
             }
         );
         const data = await response.json();
+        setComments(data.comments);
+        setUserComment("");
         console.log(data);
     };
     // this checks if availability is not there
@@ -434,6 +435,10 @@ const KombatantDetails = () => {
                                     className="form-control mb-2"
                                     id="userComment"
                                     name="userComment" // Added name attribute
+                                    value={userComment}
+                                    onChange={(evt) => {
+                                        setUserComment(evt.target.value);
+                                    }}
                                 ></textarea>
                                 <div className="row">
                                     <div className="col-6">

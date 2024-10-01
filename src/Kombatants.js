@@ -33,7 +33,7 @@ const Kombatants = () => {
                                         to={`/kombatantDetails/${kombatant.id}`}
                                     >
                                         <img
-                                            src={`/img/Characters/icon/${kombatant.name}.png`}
+                                            src={`/img/Characters/icon/${kombatant.name}.webp`}
                                             className="img-fluid"
                                             alt={kombatant.name}
                                             key={kombatant.id}
@@ -58,7 +58,7 @@ const Kombatants = () => {
                                         to={`/kombatantDetails/${kombatant.id}`}
                                     >
                                         <img
-                                            src={`/img/Characters/icon/${kombatant.name}.png`}
+                                            src={`/img/Characters/icon/${kombatant.name}.webp`}
                                             className="img-fluid"
                                             alt={kombatant.name}
                                             key={kombatant.id}
@@ -83,7 +83,7 @@ const Kombatants = () => {
                                         to={`/kombatantDetails/${kombatant.id}`}
                                     >
                                         <img
-                                            src={`/img/Characters/icon/${kombatant.name}.png`}
+                                            src={`/img/Characters/icon/${kombatant.name}.webp`}
                                             className="img-fluid"
                                             alt={kombatant.name}
                                             key={kombatant.id}
