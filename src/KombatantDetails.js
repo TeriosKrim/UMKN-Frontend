@@ -1,71 +1,76 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-import charactersData from "./data";
-import { useAuth } from "@clerk/clerk-react";
-import { useParams } from "react-router-dom";
+import "./App.css"; // Importing the CSS file for styling
+import charactersData from "./data"; // Importing character data from a local file
+import { useAuth } from "@clerk/clerk-react"; // Clerk authentication hook to get the user's token
+import { useParams } from "react-router-dom"; // Hook to get the parameters from the URL
 
 const KombatantDetails = () => {
-    const { id } = useParams();
-    // We set this to null for now so we can put data into this
-    const [availability, setAvailbility] = useState(null);
-    const [comments, setComments] = useState();
-    const { getToken } = useAuth();
-    const [kombatant, setKombatant] = useState();
-    const [isPrimary, setIsPrimary] = useState(true);
-    const [userComment, setUserComment] = useState("");
+    const { id } = useParams(); // Extract the 'id' parameter from the URL (used to fetch the correct kombatant)
 
+    // State variables to store the availability data, comments, and kombatant data
+    const [availability, setAvailability] = useState(null);
+    const [comments, setComments] = useState(); // Store comments related to the fighter
+    const { getToken } = useAuth(); // Clerk hook to retrieve the authentication token
+    const [kombatant, setKombatant] = useState(); // Store the kombatant details fetched from the API
+    const [isPrimary, setIsPrimary] = useState(true); // Boolean state to toggle between primary and alternate view (not used yet)
+    const [userComment, setUserComment] = useState(""); // Store the user's comment input
+
+    // Fetch data when the component is first rendered or when the 'id' changes
     useEffect(() => {
-        /*This look at data.js and it looks for the name of that character
-        and put it into a variable called matchingData */
+        /* This looks at the data.js file and finds the character's data
+        by name (in this case, 'scorpion'). We store this in 'matchingData'. */
         const matchingData = charactersData["scorpion"];
-        // setAvailbility will look at matchData
-        //and pull data from it
-        setAvailbility(matchingData);
+        setAvailability(matchingData); // Set the availability of the fighter based on the matching data
 
         const makeAPICall = async () => {
+            // Fetch kombatant details using the 'id' parameter from the URL
             const res2 = await fetch(
                 `https://umkn-backend-purple-voice-966.fly.dev/kombatant/${id}`
             );
-            const data2 = await res2.json();
-            console.log(data2);
-            setKombatant(data2.kombatant);
+            const data2 = await res2.json(); // Parse the JSON response
+            console.log(data2); // Log the data for debugging
+            setKombatant(data2.kombatant); // Set the kombatant state with the fetched data
 
+            // Fetch comments related to the kombatant
             const res = await fetch(
                 `https://umkn-backend-purple-voice-966.fly.dev/comment/${id}`
             );
-            const data = await res.json();
-            setComments(data.comments);
+            const data = await res.json(); // Parse the JSON response
+            setComments(data.comments); // Set the comments state with the fetched comments
         };
-        makeAPICall();
-    }, [id]);
+        makeAPICall(); // Call the async function to make API calls
+    }, [id]); // Depend on 'id', so this will run whenever the 'id' changes
 
+    // Function to handle posting a comment
     const commentPost = async (event) => {
-        event.preventDefault();
+        event.preventDefault(); // Prevent the default form submission behavior
 
-        const token = await getToken();
-        console.log(token);
+        const token = await getToken(); // Get the authentication token from Clerk
+        console.log(token); // Log the token for debugging purposes
 
-        console.log("Submitting comment:", userComment);
+        console.log("Submitting comment:", userComment); // Log the user's comment before sending it
 
+        // POST request to send the user's comment to the backend API
         const response = await fetch(
             `https://umkn-backend-purple-voice-966.fly.dev/comment`,
             {
-                method: "POST",
+                method: "POST", // Use POST to send data
                 headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json", // Specify that we're sending JSON
+                    Authorization: `Bearer ${token}`, // Include the authorization token in the header
                 },
                 body: JSON.stringify({
-                    userComment,
-                    fighterID: kombatant.id,
+                    userComment, // The comment written by the user
+                    fighterID: kombatant.id, // The ID of the fighter (from the kombatant state)
                 }),
             }
         );
-        const data = await response.json();
-        setComments(data.comments);
-        setUserComment("");
-        console.log(data);
+        const data = await response.json(); // Parse the response JSON
+        setComments(data.comments); // Update the comments state with the new data
+        setUserComment(""); // Clear the input field after submitting
+        console.log(data); // Log the response data for debugging purposes
     };
+
     // this checks if availability is not there
     // Returns Loading text
     if (!availability || !comments || !kombatant) {
